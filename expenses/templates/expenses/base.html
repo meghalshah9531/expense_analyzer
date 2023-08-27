@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Analyzer</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'dashboard' %}" class="{% if current_tab == 'dashboard' %}selected{% endif %}">Dashboard</a></li>
+            <li><a href="{% url 'records' %}" class="{% if current_tab == 'records' %}selected{% endif %}">Records</a></li>
+            <li><a href="{% url 'imports' %}" class="{% if current_tab == 'imports' %}selected{% endif %}">Imports</a></li>
+            <li><a href="{% url 'analytics' %}" class="{% if current_tab == 'analytics' %}selected{% endif %}">Analytics</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
